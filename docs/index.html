@@ -7,17 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="posicion">Sin movimiento</h1>
-</body>
-
-<script>
- window.addEventListener("mousemove", (event)=>{
-    const posicion = document.getElementById("posicion")
-    posicion.innerHTML=`Posición X:${event.pageX} Posición Y:${event.pageY}`;
-   });
- window.addEventListener("click", (event)=>{
-
-   console.log(`Se ha pulsado en PosX ${event.pageX} y PosY ${event.pageY}`);
- })
-</script>
+    <h1 id="etiqueta">Esto va a cambiar</h1>
+    <input type="text" id="texto">
+    <button id="boton">Cambia título</button>
+    
+    </body>
+    
+    <script>
+     const btn = document.getElementById("boton");
+     btn.addEventListener("click", ()=>{
+        const texto = document.getElementById("texto");
+        const etiqueta = document.getElementById("etiqueta")
+        etiqueta.innerHTML = (texto.value != "") ? texto.value: "Introduce algo, PLIS";
+        texto.value = "";
+        texto.focus();
+       });
+    </script>
 </html>
